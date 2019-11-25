@@ -8,9 +8,43 @@
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="dist/css/swiper.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+       $('a[href^="#"]').click(function() {
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          var speed = 600; // スクロールの速度（ミリ秒）
+          $('body,html').animate({scrollTop:position}, speed, 'swing'); // スクロール方式
+          return false;
+       });
+    });
+
+    $(function() {
+  var $win = $(window),
+      $main = $('main'),
+      $nav = $('.global-nav'),
+      navHeight = $nav.outerHeight(),
+      navPos = $nav.offset().top,
+      fixedClass = 'is-fixed';
+
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > navPos ) {
+      $nav.addClass(fixedClass);
+      $main.css('margin-top', navHeight);
+    } else {
+      $nav.removeClass(fixedClass);
+      $main.css('margin-top', '0');
+    }
+  });
+});
+    </script>
 </head>
 <body>
-  <header class="header">
+  <header id="home" class="header">
     <div class="inner">
       <p class="flagL"><img src="./images/header_flag_l.gif" alt=""></p>
       <p class="flagR"><img src="./images/header_flag_r.gif" alt=""></p>
@@ -41,63 +75,90 @@
       <ul class="nav-items">
         <li class="nav-item">
           <img src="./images/nav1.png" alt="">
-          <a href="">ホーム</a>
+          <a href="#home">ホーム</a>
         </li>
         <li class="nav-item">
           <img src="./images/nav2.png" alt="">
-          <a href="">クラブについて</a>
+          <a href="#about">クラブについて</a>
         </li>
         <li class="nav-item">
           <img src="./images/nav3.png" alt="">
-          <a href="">育成方針</a>
+          <a href="#schedule">一日の流れ</a>
         </li>
         <li class="nav-item">
           <img src="./images/nav4.png" alt="">
-          <a href="">入所案内</a>
+          <a href="#policy">指導方針</a>
         </li>
         <li class="nav-item">
           <img src="./images/nav5.png" alt="">
-          <a href="">お問い合わせ</a>
+          <a href="#price">利用料金</a>
         </li>
       </ul>
     </nav>
   </div>
   <!-- global-nav -->
 
-  <div class="about">
+  <div id="about" class="about">
     <div class="inner">
-      <h2 class="section-title">児童の保護・育成を図る地域組織です。</h2>
+      <h2 class="section-title">学童クラブについて</h2>
 
-      <div class="about-wrapper">
-        <a class="about-item">
-          <div class="img-area area1"><img src="./images/about1.jpg" alt=""></div>
-          <div class="text-area">
-            <h2 class="text-area__title">クラブについて</h2>
-            <p class="text-area__text">私たちの活動内容や組織、ずっと大切にしている思いをまとめました。</p>
-          </div>
-          <span class="btn">詳しく見る</span>
-        </a>
-        <!-- about-item -->
-        <a class="about-item">
-          <div class="img-area area2"><img src="./images/about2.jpg" alt=""></div>
-          <div class="text-area">
-            <h2 class="text-area__title">過ごし方</h2>
-            <p class="text-area__text">1日のスケジュールやイベントなど、児童の過ごし方をまとめました。</p>
-          </div>
-          <span class="btn">詳しく見る</span>
-        </a>
-        <!-- about-item -->
-        <a class="about-item">
-          <div class="img-area area3"><img src="./images/about3.jpg" alt=""></div>
-          <div class="text-area">
-            <h2 class="text-area__title">入所について</h2>
-            <p class="text-area__text">入所の方法や保育料・その他費用、よくある質問をまとめました。</p>
-          </div>
-          <span class="btn">詳しく見る</span>
-        </a>
-        <!-- about-item -->
+      <div class="contents">
+        <h3 class="contents-title">児童の保護・育成を図る地域組織です。</h3>
+        <div class="contents-desc">
+          <p>小学校へ入学したお子さんが下校時に、保護者のいない留守家庭で一人で留守番ができるかどうか不安が生じ安心して仕事ができないこともあるかと思います。</p>
+          <p>そのため、赤荻クラブは放課後留守家庭の児童の保護、育成を図るため、地域の運営委員会、民間指導者、地域の児童、及び保護者で構成、運営する「県税育成活動」を目的とした地域組織です。</p>
+        </div>
       </div>
-      <!-- about-wrapper -->
+
+      <div class="contents">
+        <h3 class="contents-title">基本情報</h3>
+
+        <div class="contents-desc contents-desc2">
+          <div class="contents-desc__dl">
+            <dl>
+                <dt>施設名</dt>
+                <dd>赤荻クラブ</dd>
+              </dl>
+              <dl>
+                <dt>住所</dt>
+                <dd>岩手県一関市赤荻字桜町42-3</dd>
+              </dl>
+              <dl>
+                <dt>電話・FAX</dt>
+                <dd>0191-25-2400</dd>
+              </dl>
+              <dl>
+                <dt>設置主体</dt>
+                <dd>一関市</dd>
+              </dl>
+              <dl>
+                <dt>経営主体</dt>
+                <dd>赤荻クラブ運営委員会</dd>
+              </dl>
+              <dl>
+                <dt>運営費</dt>
+                <dd>一関市よりの委託料、クラブ利用料</dd>
+              </dl>
+              <dl>
+                <dt>対象年齢</dt>
+                <dd>小学校1～6年生</dd>
+							</dl>
+							<dl>
+								<dt>休所日</dt>
+								<dd>日曜、祝日、年末年始、休校日</dd>
+							</dl>
+          </div>
+
+
+          <div class="image-area">
+            <p class=image-box>
+              <img src="./images/about4.jpg" alt="">
+            </p>
+          </div>
+        </div>
+        <!-- contents-desc contents-desc__dl -->
+      </div>
+      <!-- contents -->
     </div>
     <!-- inner -->
   </div>
@@ -108,7 +169,99 @@
   </div>
   <!-- line -->
 
-  <div class="policy">
+  <div id="schedule" class="schedule">
+    <div class="inner">
+      <h2 class="section-title">一日の生活の流れ</h2>
+
+      <div class="contents">
+        <div class="schedule-contents">
+					<div class="schedule-day">
+						<h3 class="contents-title">放課後の保育(平日)</h3>
+						<div class="schedule-box margin-one">
+							<div class="time">12:00</div>
+							<div class="title">開所</div>
+							<p>順次出席、給食がない日はお弁当</p>
+						</div>
+						<div class="schedule-box margin-two">
+							<div class="time">15:00</div>
+							<div class="title">おやつ・宿題</div>
+						</div>
+						<div class="schedule-box">
+							<div class="time">15:30</div>
+							<div class="title">自由遊び</div>
+							<p>校庭・交流館を利用しての活動</p>
+						</div>
+						<div class="schedule-box">
+							<div class="time">16:30</div>
+							<div class="title">集団活動・室内遊び</div>
+						</div>
+						<div class="schedule-box">
+							<div class="time">17:30</div>
+							<div class="title">帰りの準備、読書、テレビ</div>
+							<p>順次帰宅</p>
+						</div>
+					</div>
+					<!-- schedule-day -->
+
+					<div class="schedule-holiday">
+						<h3 class="contents-title">一日保育(土曜、長期休み、代休)</h3>
+						<div class="schedule-box">
+							<div class="time">7:30</div>
+							<div class="title">開所</div>
+							<p>順次出席、学習</p>
+						</div>
+						<div class="schedule-box">
+							<div class="time">9:00</div>
+							<div class="title">学習・読書</div>
+							<p>出欠・連絡事項等の確認</p>
+						</div>
+						<div class="schedule-box">
+							<div class="time">10:00</div>
+							<div class="title">集団活動または自由遊び</div>
+							<p>校庭・交流館を利用しての活動</p>
+						</div>
+						<div class="schedule-box">
+							<div class="time">12:00</div>
+							<div class="title">昼食</div>
+							<p>その後は読書、学習、昼寝</p>
+						</div>
+						<div class="schedule-box">
+							<div class="time">13:15</div>
+							<div class="title">集団活動または自由遊び</div>
+							<p>校庭・交流館を利用しての活動</p>
+						</div>
+						<div class="schedule-box margin-three">
+							<div class="time">16:00</div>
+							<div class="title">おやつ</div>
+						</div>
+						<div class="schedule-box">
+							<div class="time">17:00</div>
+							<div class="title">帰りの準備、読書、テレビ</div>
+							<p>順次帰宅</p>
+						</div>
+					</div>
+					<!-- schedule-holiday -->
+				</div>
+				<!-- schedule-contents -->
+
+				<div class="schedule-box__last">
+					<div class="time">19:00</div>
+					<div class="title">閉所</div>
+				</div>
+
+			</div>
+			<!-- contents -->
+		</div>
+		<!-- inner -->
+  </div>
+  <!-- schedule -->
+
+  <div class="line">
+    <div class="inner"></div>
+  </div>
+  <!-- line -->
+
+  <div id="policy" class="policy">
     <div class="inner">
       <h2 class="section-title">☆私たちが教えたいこと☆</h2>
 
@@ -138,7 +291,60 @@
   <div class="line">
     <div class="inner"></div>
   </div>
-  <!-- line -->
+	<!-- line -->
+
+	<div id="price" class="price">
+		<div class="inner">
+			<h2 class="section-title">保育料、その他費用</h2>
+
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>保育料(月額)</span></th>
+							<th>おやつ代(月額)</span></th>
+							<th>安全保険(年額)</span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>一般世帯</td>
+							<td>7,000円</td>
+							<td>1,500円</td>
+							<td>800円</td>
+						</tr>
+						<tr>
+							<td>生活保護世帯</td>
+							<td>0円(全額免除)</td>
+							<td>1,500円</td>
+							<td>800円</td>
+						</tr>
+						<tr>
+							<td>母子・父子世帯</td>
+							<td>3,500円(半額免除)</td>
+							<td>1,500円</td>
+							<td>800円</td>
+						</tr>
+						<tr>
+							<td>多子世帯</td>
+							<td>3,500円(半額免除)</td>
+							<td>1,500円</td>
+							<td>800円</td>
+						</tr>
+						<tr>
+							<td>住民税非課税世帯</td>
+							<td>3,500円(半額免除)</td>
+							<td>1,500円</td>
+							<td>800円</td>
+						</tr>
+					</tbody>
+        </table>
+        <div class="note">※土曜日、長期休み、代休日の午前中は別途100円の利用料がかかります。</div>
+			</div>
+			<!-- table -->
+		</div>
+	</div>
 
   <footer class="footer">
     <div class="inner">
@@ -171,7 +377,8 @@
         slidesPerView: 2,
         centeredSlides : true,
         autoplay: {
-    delay: 3000,
+    delay: 4000,
+    speed: 2000,
     disableOnInteraction: true
   },
       });
