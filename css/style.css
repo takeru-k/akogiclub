@@ -1,10 +1,14 @@
 @charset "UTF-8";
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/*---------------------------------
 
+  変数
+
+---------------------------------*/
+/*---------------------------------
+
+  モジュール
+
+---------------------------------*/
 .btn {
   border: 3px solid #ff8593;
   background: #fff;
@@ -59,6 +63,25 @@
   width: 300px;
   height: 60px;
   line-height: 60px;
+}
+
+.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+/*---------------------------------
+
+  全体共通
+
+---------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -118,8 +141,15 @@ ul, ol {
 
 .inner {
   padding: 30px 40px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
+/*---------------------------------
+
+  header
+
+---------------------------------*/
 .header {
   position: relative;
   height: 150px;
@@ -194,76 +224,81 @@ ul, ol {
   color: #fff !important;
 }
 
+/*---------------------------------
+
+  about
+
+---------------------------------*/
 .section-title {
   text-align: center;
   color: #ff8593;
   margin-top: 50px;
 }
 
-.about-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 30px;
-  max-width: 1180px;
-  margin: 30px auto;
+.contents {
   background: #fff;
   border-radius: 10px;
+  margin-top: 30px;
+  padding: 30px 70px;
 }
 
-.about-item {
-  display: block;
-  position: relative;
-  width: 32%;
-}
-
-.img-area {
-  position: relative;
-}
-
-.img-area img {
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.icon, .area1:after, .area2:after, .area3:after {
-  content: '';
-  display: block;
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -50px;
-  margin: auto;
-}
-
-.area1:after {
-  background: url(../images/about1.png) no-repeat;
-}
-
-.area2:after {
-  background: url(../images/about2.png) no-repeat;
-}
-
-.area3:after {
-  background: url(../images/about3.png) no-repeat;
-}
-
-.text-area__title {
-  font-size: 1.8rem;
+.contents-title {
   text-align: center;
-  color: #ff8593;
-  margin: 40px 0 10px;
+  margin-bottom: 30px;
 }
 
-.text-area__text {
-  line-height: 26px;
-  width: calc(100% - 30px);
-  padding-left: 20px;
-  margin-bottom: 14px;
+.contents-desc p:first-child {
+  margin-bottom: 10px;
 }
 
+.contents-desc2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contents-desc__dl {
+  width: 50%;
+}
+
+.contents-desc__dl dl {
+  display: flex;
+}
+
+.contents-desc__dl dl:last-child {
+  border-bottom: 1px dashed #543500;
+}
+
+.contents-desc__dl dt, .contents-desc__dl dd {
+  padding: 15px 20px;
+  border-top: 1px dashed #543500;
+}
+
+.contents-desc__dl dt {
+  background: #fdb0b5;
+  font-weight: bold;
+  width: 30%;
+  text-align: center;
+}
+
+.contents-desc__dl dd {
+  width: 70%;
+}
+
+.image-area {
+  width: 43%;
+}
+
+.image-box {
+  border: 7px solid #fff;
+  box-shadow: 4px 4px 10px -2px #999999;
+  border-radius: 5px;
+}
+
+/*---------------------------------
+
+  line
+
+---------------------------------*/
 .line {
   background: url(../images/line.png) repeat;
   background-size: auto 50px;
@@ -271,6 +306,125 @@ ul, ol {
   margin: 50px auto 0;
 }
 
+/*---------------------------------
+
+  schedule
+
+---------------------------------*/
+.schedule-contents {
+  position: relative;
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-contents:after {
+  content: '';
+  width: 1px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #fdb0b5;
+}
+
+.schedule-day {
+  width: calc(50% - 20px);
+  text-align: right;
+}
+
+.schedule-box {
+  background: #fdb0b5;
+  position: relative;
+  width: 350px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.schedule-box:before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  right: -6px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #fdb0b5;
+}
+
+.time, .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.time {
+  position: relative;
+}
+
+.time:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: #fdb0b5;
+  border-radius: 50%;
+  right: -40px;
+  top: 20px;
+}
+
+.title {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid;
+}
+
+.schedule-holiday .schedule-box:before {
+  left: -6px;
+}
+
+.schedule-holiday .time:after {
+  left: -40px;
+}
+
+.schedule-box__last {
+  background: #fdb0b5;
+  position: relative;
+  width: 350px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.schedule-box__last .time:after {
+  display: none;
+}
+
+.margin-one {
+  margin-top: 439px;
+}
+
+.margin-two {
+  margin-top: 80px;
+}
+
+.margin-three {
+  margin-top: 130px;
+}
+
+/*---------------------------------
+
+  policy
+
+---------------------------------*/
 .policy-box {
   margin-top: 30px;
 }
@@ -304,6 +458,64 @@ ul, ol {
   border-bottom: none;
 }
 
+/*---------------------------------
+
+  price
+
+---------------------------------*/
+.table {
+  width: 100%;
+}
+
+.table table {
+  border-collapse: collapse;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: inline-block;
+  overflow: hidden;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+}
+
+.table th {
+  padding: 10px;
+  border-left: 1px dashed #333;
+  width: 200px;
+}
+
+.table th:first-child {
+  border-left: none;
+}
+
+.table td {
+  background: #fff;
+  border-top: 1px dashed #333;
+  border-left: 1px dashed #333;
+  padding: 10px;
+}
+
+.table td:first-child {
+  border-left: none;
+}
+
+thead {
+  background: #fdb0b5;
+  border-bottom: 2px solid #333;
+}
+
+.note {
+  font-size: 0.9rem;
+  margin-left: 10%;
+}
+
+/*---------------------------------
+
+  footer
+
+---------------------------------*/
 .footer {
   background: url(../images/footer.png) top center no-repeat;
   margin-top: 50px;
