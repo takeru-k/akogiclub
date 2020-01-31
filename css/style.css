@@ -145,12 +145,15 @@ ul, ol {
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 767px) {
   .inner {
     padding: 20px;
   }
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   header
@@ -230,6 +233,7 @@ ul, ol {
   color: #fff !important;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 767px) {
   .header {
     height: 100%;
@@ -251,6 +255,8 @@ ul, ol {
   }
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   about
@@ -321,6 +327,7 @@ ul, ol {
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 767px) {
   .contents {
     margin-top: 30px;
@@ -348,6 +355,8 @@ ul, ol {
   }
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   line
@@ -464,6 +473,7 @@ ul, ol {
 
 .margin-one {
   margin-top: 439px;
+<<<<<<< HEAD
 }
 
 .margin-two {
@@ -478,6 +488,16 @@ ul, ol {
   .schedule {
     display: none;
   }
+=======
+}
+
+.margin-two {
+  margin-top: 80px;
+}
+
+.margin-three {
+  margin-top: 130px;
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 }
 
 /*---------------------------------
@@ -507,19 +527,25 @@ ul, ol {
   border-bottom: none;
 }
 
+<<<<<<< HEAD
 .policy-box li span {
   font-weight: bold;
   color: #ff8593;
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   price
 
 ---------------------------------*/
 .table {
+<<<<<<< HEAD
   overflow: auto;
   white-space: nowrap;
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
   width: 100%;
 }
 
@@ -567,6 +593,7 @@ thead {
   margin-left: 10%;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 767px) {
   .table::-webkit-scrollbar {
     height: 5px;
@@ -587,6 +614,8 @@ thead {
   }
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   footer

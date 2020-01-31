@@ -1,7 +1,13 @@
 /*---------------------------------
+<<<<<<< HEAD
 
   変数
 
+=======
+
+  変数
+
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 ---------------------------------*/
 // 画面サイズ
 $container_size: 1200px;
@@ -15,6 +21,12 @@ $mq_sp: 'screen and (max-width: 767px)';
 // メインカラー
 $color1: #ff8593; 
 
+<<<<<<< HEAD
+=======
+// メインカラー
+$color1: #ff8593; 
+
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 //サブカラー
 $color2: #fff;
 $color4: #fdb0b5;
@@ -178,6 +190,12 @@ ul,ol {
 
 ---------------------------------*/
 
+/*---------------------------------
+
+  header
+
+---------------------------------*/
+
 .header{
   position: relative;
   height: 150px;
@@ -254,6 +272,7 @@ ul,ol {
   }
 }
 
+<<<<<<< HEAD
 @media #{$mq_sp}{
   .header{
     height: 100%;
@@ -279,6 +298,8 @@ ul,ol {
     font-size: 2rem;
   }
 }
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   about
@@ -353,6 +374,7 @@ ul,ol {
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 @media #{$mq_sp}{
   .contents{
     margin-top: 30px;
@@ -385,6 +407,8 @@ ul,ol {
     margin-top: 20px;
   }
 }
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   line
@@ -420,6 +444,7 @@ ul,ol {
     top: 0;
     background: $color4;
   }
+<<<<<<< HEAD
 }
 
 .schedule-day{
@@ -427,6 +452,15 @@ ul,ol {
   text-align:right;
 }
 
+=======
+}
+
+.schedule-day{
+  width: calc(50% - 20px);
+  text-align:right;
+}
+
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 .schedule-box{
   background: $color4;
   position: relative;
@@ -518,12 +552,15 @@ ul,ol {
   margin-top: 130px;
 }
 
+<<<<<<< HEAD
 @media #{$mq_sp}{
   .schedule{
     display: none;
   }
 }
 
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   policy
@@ -563,8 +600,12 @@ ul,ol {
 
 ---------------------------------*/
 .table{
+<<<<<<< HEAD
   overflow: auto;
   white-space: nowrap;
+=======
+
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
   width: 100%;
 
   table{
@@ -612,6 +653,7 @@ thead{
   font-size: 0.9rem;
   margin-left: 10%;
 }
+<<<<<<< HEAD
 
 @media #{$mq_sp}{
   .table{
@@ -638,6 +680,8 @@ thead{
     text-indent: -1em;
   }
 }
+=======
+>>>>>>> 19b33ab2b25ef11cd4b3fe5ad0ea7ad93e44628b
 /*---------------------------------
 
   footer
