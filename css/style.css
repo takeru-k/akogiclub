@@ -145,6 +145,12 @@ ul, ol {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 767px) {
+  .inner {
+    padding: 20px;
+  }
+}
+
 /*---------------------------------
 
   header
@@ -224,6 +230,27 @@ ul, ol {
   color: #fff !important;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    height: 100%;
+  }
+  .flagL {
+    display: none;
+  }
+  .flagR {
+    display: none;
+  }
+  .global-nav {
+    display: none;
+  }
+  .logo-p {
+    font-size: 1rem;
+  }
+  .logo {
+    font-size: 2rem;
+  }
+}
+
 /*---------------------------------
 
   about
@@ -292,6 +319,33 @@ ul, ol {
   border: 7px solid #fff;
   box-shadow: 4px 4px 10px -2px #999999;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .contents {
+    margin-top: 30px;
+    padding: 20px;
+  }
+  .contents-title {
+    font-size: 1rem;
+  }
+  .contents-desc2 {
+    display: block;
+  }
+  .contents-desc__dl {
+    width: 100%;
+  }
+  .contents-desc__dl dt {
+    font-size: 0.9rem;
+    padding: 15px 5px;
+  }
+  .contents-desc__dl dd {
+    padding: 15px 5px;
+  }
+  .image-area {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 /*---------------------------------
@@ -420,6 +474,12 @@ ul, ol {
   margin-top: 130px;
 }
 
+@media screen and (max-width: 767px) {
+  .schedule {
+    display: none;
+  }
+}
+
 /*---------------------------------
 
   policy
@@ -430,32 +490,26 @@ ul, ol {
 }
 
 .policy-box ul {
-  border: 3px solid #ff8593;
   border-radius: 10px;
-  border-top: 10px solid #ff8593;
   max-width: 600px;
   margin: 0 auto;
-  position: relative;
-}
-
-.policy-box ul:after {
-  content: '';
-  background: url(../images/policy.png);
-  width: 140px;
-  height: 130px;
-  position: absolute;
-  bottom: -50px;
-  right: -30px;
 }
 
 .policy-box li {
   padding: 10px;
   border-bottom: 1px dashed #ff8593;
   margin: 0 10px;
+  padding-left: 2em;
+  text-indent: -2em;
 }
 
 .policy-box li:last-child {
   border-bottom: none;
+}
+
+.policy-box li span {
+  font-weight: bold;
+  color: #ff8593;
 }
 
 /*---------------------------------
@@ -464,6 +518,8 @@ ul, ol {
 
 ---------------------------------*/
 .table {
+  overflow: auto;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -511,6 +567,26 @@ thead {
   margin-left: 10%;
 }
 
+@media screen and (max-width: 767px) {
+  .table::-webkit-scrollbar {
+    height: 5px;
+  }
+  .table::-webkit-scrollbar-track {
+    background: #F1F1F1;
+  }
+  .table::-webkit-scrollbar-thumb {
+    background: #BCBCBC;
+  }
+  .table table {
+    margin: 20px 0 0;
+  }
+  .note {
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+}
+
 /*---------------------------------
 
   footer
@@ -526,30 +602,13 @@ thead {
   margin-top: 100px;
 }
 
-.footer-tel {
-  margin-top: 30px;
-}
-
 .tel-number {
   display: block;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  position: relative;
   text-align: center;
   width: 300px;
   margin: 0 auto;
-  padding-left: 30px;
-}
-
-.tel-number:before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 15px;
-  width: 25px;
-  height: 32px;
-  display: inline-block;
-  background: url(../images/tel.svg) no-repeat center;
 }
 
 .footer-p {
@@ -562,4 +621,16 @@ thead {
   background: #ff8593;
   padding: 10px 0;
   font-size: 0.8rem;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    background: none;
+    height: 100%;
+    margin: 0;
+  }
+  .footer-logo {
+    margin: 0;
+  }
 }

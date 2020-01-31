@@ -7,12 +7,10 @@
 $container_size: 1200px;
 
 $pc: $container_size;
-$tab: 768px;
-$sp: 767px;
 
-$mq_pc: 'screen and (min-width: #{$tab + 1px})';
-$mq_tab: 'screen and (max-width: #{$tab})';
-$mq_sp: 'screen and (max-width: #{$sp})';
+$mq_pc: 'screen and (min-width: #{$container_size})';
+$mq_tab: 'screen and (max-width: #{$container_size - 1px})';
+$mq_sp: 'screen and (max-width: 767px)';
 
 // メインカラー
 $color1: #ff8593; 
@@ -169,10 +167,11 @@ ul,ol {
   margin: 0 auto;
 }
 
-@media #{$mq_pc}{
-	
+@media #{$mq_sp}{
+  .inner{
+    padding: 20px;
+  }
 }
-
 /*---------------------------------
 
   header
@@ -255,6 +254,31 @@ ul,ol {
   }
 }
 
+@media #{$mq_sp}{
+  .header{
+    height: 100%;
+  }
+  
+  .flagL{
+    display: none;
+  }
+  
+  .flagR{
+    display: none;
+  }
+
+  .global-nav{
+    display: none;
+  }
+
+  .logo-p{
+    font-size: 1rem;
+  }
+
+  .logo{
+    font-size: 2rem;
+  }
+}
 /*---------------------------------
 
   about
@@ -329,6 +353,38 @@ ul,ol {
   border-radius: 5px;
 }
 
+@media #{$mq_sp}{
+  .contents{
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .contents-title{
+    font-size: 1rem;
+  }
+
+  .contents-desc2{
+    display: block;
+  }
+
+  .contents-desc__dl{
+    width: 100%;
+
+    dt{
+      font-size: 0.9rem;
+      padding: 15px 5px;
+    }
+
+    dd{
+      padding: 15px 5px;
+    }
+  }
+
+  .image-area{
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 /*---------------------------------
 
   line
@@ -462,6 +518,12 @@ ul,ol {
   margin-top: 130px;
 }
 
+@media #{$mq_sp}{
+  .schedule{
+    display: none;
+  }
+}
+
 /*---------------------------------
 
   policy
@@ -470,32 +532,27 @@ ul,ol {
 
 .policy-box{
   margin-top: 30px;
+
   ul{
-    border: 3px solid $color1;
     border-radius: 10px;
-    border-top: 10px solid $color1;
     max-width: 600px;
     margin: 0 auto;
-    position: relative;
-
-    &:after{
-      content: '';
-      background: url(../images/policy.png);
-      width: 140px;
-      height: 130px;
-      position: absolute;
-      bottom: -50px;
-      right: -30px;
-    }
   }
-  
+
   li{
     padding: 10px;
     border-bottom: 1px dashed $color1;
     margin: 0 10px;
+    padding-left:2em;
+    text-indent:-2em;
 
     &:last-child{
       border-bottom: none;
+    }
+
+    span{
+      font-weight: bold;
+      color: $color1;
     }
   }
 }
@@ -506,7 +563,8 @@ ul,ol {
 
 ---------------------------------*/
 .table{
-
+  overflow: auto;
+  white-space: nowrap;
   width: 100%;
 
   table{
@@ -554,6 +612,32 @@ thead{
   font-size: 0.9rem;
   margin-left: 10%;
 }
+
+@media #{$mq_sp}{
+  .table{
+    &::-webkit-scrollbar{
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track{
+      background: #F1F1F1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #BCBCBC;
+    }
+
+    table{
+      margin: 20px 0 0;
+    }
+  }
+  
+  .note{
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+}
 /*---------------------------------
 
   footer
@@ -570,30 +654,13 @@ thead{
   margin-top: 100px;
 }
 
-.footer-tel{
-  margin-top: 30px;
-}
-
 .tel-number{
   display: block;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  position: relative;
   text-align: center;
   width: 300px;
   margin: 0 auto;
-  padding-left: 30px;
-
-  &:before{
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 15px;
-    width: 25px;
-    height: 32px;
-    display: inline-block;
-    background: url(../images/tel.svg) no-repeat center;
-  }
 }
 
 .footer-p{
@@ -606,4 +673,17 @@ thead{
   background: $color1;
   padding: 10px 0;
   font-size: 0.8rem;
+  color: $color2;
+}
+
+@media #{$mq_sp}{
+  .footer{
+    background: none;
+    height: 100%;
+    margin: 0;
+  }
+
+  .footer-logo{
+    margin: 0;
+  }
 }
